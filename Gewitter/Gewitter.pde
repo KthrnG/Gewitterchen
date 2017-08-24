@@ -3,7 +3,7 @@ import processing.serial.*;
 
 import processing.sound.*;
 WhiteNoise noise;
-LowPass lowPass;
+//LowPass lowPass;
 
 float amp=0.0;
 
@@ -17,10 +17,10 @@ void setup() {
   fullScreen();
   background(0);
   noise = new WhiteNoise(this);
-  lowPass = new LowPass(this);
-  //noise.amp(LOW);
-  noise.play(0.5);
-  lowPass.process(noise, 800);
+ // lowPass = new LowPass(this);
+  noise.amp(LOW);
+  noise.play();
+  // lowPass.process(noise, 800);
   arduinoSerial = new Serial(this, Serial.list()[1], 9600);
 }
 
