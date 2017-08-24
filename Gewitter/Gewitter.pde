@@ -1,9 +1,8 @@
-//test
 import processing.serial.*;
 
 import processing.sound.*;
 WhiteNoise noise;
-//LowPass lowPass;
+//SoundFile file;
 
 float amp=0.0;
 
@@ -17,10 +16,10 @@ void setup() {
   fullScreen();
   background(0);
   noise = new WhiteNoise(this);
- // lowPass = new LowPass(this);
   noise.amp(LOW);
   noise.play();
-  // lowPass.process(noise, 800);
+  //file = new SoundFile (this, "Gewitterchen.wav");
+  //file.play();
   arduinoSerial = new Serial(this, Serial.list()[1], 9600);
 }
 
@@ -37,11 +36,11 @@ void draw() {
     }
     //println(threshold);
   }
-  //if (intense) {
-  //  threshold = 1000;
-  //} else {
-  //  threshold = 100;
-  //}
+  if (intense) {
+    threshold = 1000;
+  } else {
+    threshold = 100;
+  }
 
   if (random < threshold) {
     background(255);
