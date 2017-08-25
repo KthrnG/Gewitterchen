@@ -35,11 +35,11 @@ void draw() {
     }
     //println(threshold);
   }
-  if (intense) {
-    threshold = 1000;
-  } else {
-    threshold = 100;
-  }
+  //if (intense) {
+  //  threshold = 1000;
+  //} else {
+  //  threshold = 100;
+  //}
 
   if (random < threshold) {
     background(255);
