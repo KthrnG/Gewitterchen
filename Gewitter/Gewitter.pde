@@ -13,13 +13,14 @@ Serial arduinoSerial;
 float threshold = 100;
 
 void setup() {
-  fullScreen();
+  // fullScreen();
+  size(500, 500);
   background(0);
   noise = new WhiteNoise(this);
   noise.amp(LOW);
   noise.play();
-//  file = new SoundFile (this, "Gewitterchen.wav");
-//  file.play();
+  //  file = new SoundFile (this, "Gewitterchen.wav");
+  //  file.play();
   arduinoSerial = new Serial(this, Serial.list()[1], 9600);
 }
 
