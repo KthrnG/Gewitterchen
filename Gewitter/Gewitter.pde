@@ -4,8 +4,6 @@ import processing.sound.*;
 WhiteNoise noise;
 //SoundFile file;
 
-float amp=0.0;
-
 float LOW = 0.05;
 float HIGH = 1.0;
 boolean intense = false;
@@ -29,19 +27,19 @@ void draw() {
 
   if (arduinoSerial.available() > 0) {
     String valueAsString = arduinoSerial.readStringUntil('\n');
-    //println("###" + valueAsString + "###");
+   // println("###" + valueAsString + "###");
     if (valueAsString != null) {
       valueAsString = valueAsString.replace("\n", "");
-      //println("+++" + valueAsString + "+++");
+   // println("+++" + valueAsString + "+++");
       threshold = Float.parseFloat(valueAsString);
     }
     //println(threshold);
   }
-  if (intense) {
-    threshold = 1000;
-  } else {
-    threshold = 100;
-  }
+  //if (intense) {
+  //  threshold = 1000;
+  //} else {
+  //  threshold = 100;
+  //}
 
   if (random < threshold) {
     background(255);
