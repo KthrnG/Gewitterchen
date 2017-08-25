@@ -17,8 +17,9 @@ void setup() {
   noise = new WhiteNoise(this);
   noise.amp(LOW);
   noise.play();
-  //  file = new SoundFile (this, "Gewitterchen.wav");
-  //  file.play();
+ // file = new SoundFile (this, "Gewitterchen.wav");
+ // file.play();
+ // file.loop();
   arduinoSerial = new Serial(this, Serial.list()[1], 9600);
 }
 
