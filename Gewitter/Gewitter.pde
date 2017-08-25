@@ -12,7 +12,7 @@ float threshold = 100;
 
 void setup() {
   // fullScreen();
-  size(500, 500);
+  size(100, 100);
   background(0);
   noise = new WhiteNoise(this);
   noise.amp(LOW);
