@@ -6,7 +6,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int value = analogRead(A0);
+  int value = map(analogRead(A0), 0, 1023, 0, 100);
   Serial.println(value);
   delay(100);
 }
