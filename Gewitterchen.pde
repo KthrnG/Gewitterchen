@@ -12,7 +12,7 @@ void setup() {
   Serial arduino = new Serial(this, Serial.list()[32], 9600);
   arduino.bufferUntil('\n');
 
-  fullScreen(FX2D, 1);
+  fullScreen(FX2D, 2);
   frameRate(10);
 
   regen = new WhiteNoise(this);
