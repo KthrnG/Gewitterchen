@@ -4,7 +4,6 @@ void setup() {
   pinMode (A0, INPUT);
 }
 
-
 void loop() {
   // put your main code here, to run repeatedly:
   int value = map(analogRead(A0), 0, 1023, 0, 100);
