@@ -12,7 +12,7 @@ void setup() {
   Serial arduino = new Serial(this, Serial.list()[32], 9600);
   arduino.bufferUntil('\n');
 
-  fullScreen(FX2D, 2);
+  fullScreen(FX2D, SPAN);
   frameRate(10);
 
   regen = new WhiteNoise(this);
@@ -28,6 +28,9 @@ void blitz() {
   float zufallsZahl = random(MAXIMUM * 80);
   if (zufallsZahl < schieberegler) {
     background(255);
+    // Ansatz für zwei Bildschirme
+    //fill(255);
+    //rect(1680, 0, 2704, 768);
     donner();
   } else {
     background(0);
