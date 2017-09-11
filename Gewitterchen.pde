@@ -5,6 +5,13 @@ int schieberegler = 0;
 int MAXIMUM = 100;
 int MINIMUM = 0;
 
+int BEAMER_X = 1680;
+int BEAMER_Y = 1050;
+int DISPLAY_X = 1024;
+int DISPLAY_Y = 768;
+
+int GRENZWERT_BEAMER = 70;
+
 WhiteNoise regen;
 
 void setup() {
@@ -25,16 +32,32 @@ void draw() {
 }
 
 void blitz() {
-  float zufallsZahl = random(MAXIMUM * 80);
+  float zufallsZahl;
+  if (schieberegler > GRENZWERT_BEAMER) { 
+    zufallsZahl = random(MAXIMUM * 30);
+  } else {
+    zufallsZahl = random(MAXIMUM * 80);
+  }
   if (zufallsZahl < schieberegler) {
-    background(255);
-    // Ansatz für zwei Bildschirme
-    //fill(255);
-    //rect(1680, 0, 2704, 768);
+    if (schieberegler > GRENZWERT_BEAMER) {
+      blitzBeamer();
+    } else {
+      blitzDisplay();
+    }
     donner();
   } else {
     background(0);
   }
+}
+
+void blitzDisplay() {
+  fill(255);
+  rect(BEAMER_X, 0, DISPLAY_X, DISPLAY_Y);
+}
+
+void blitzBeamer() {
+  fill(255);
+  rect(0, 0, BEAMER_X, BEAMER_Y);
 }
 
 void donner() {
